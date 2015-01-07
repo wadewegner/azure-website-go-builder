@@ -27,5 +27,7 @@ SET PATH=%PATH%;%GOPATH%\bin;%HOME%\site\wwwroot\go\bin
 echo Go get
 go get %FOLDER%
 
-echo Set command
+echo Sed command
 sed -i 's/GOAPPBINARY/%FOLDER%.exe/g' %HOME%\site\wwwroot\Web.Config
+
+echo Finished
