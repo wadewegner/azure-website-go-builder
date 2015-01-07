@@ -26,6 +26,6 @@ ECHO %PATH%
 
 go get %FOLDER%
 
-rem sed -i 's/GOAPPBINARY/%FOLDER%.exe/g' %NEWHOME%\site\wwwroot\Web.Config
+sed -i 's/GOAPPBINARY/%FOLDER%.exe/g' %NEWHOME%\site\wwwroot\Web.Config
 
 rem exit /b 1
