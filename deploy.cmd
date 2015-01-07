@@ -24,7 +24,7 @@ SET PATH=%PATH%;%GOPATH%\bin;%NEWHOME%\site\wwwroot\go\bin
 
 ECHO %PATH%
 
-rem go get %FOLDER%
+go get %FOLDER%
 
 rem sed -i 's/GOAPPBINARY/%FOLDER%.exe/g' %NEWHOME%\site\wwwroot\Web.Config
 
