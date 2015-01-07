@@ -1,8 +1,11 @@
 set echo on
 
-MKDIR %HOME%/site/wwwroot/gopath
-MKDIR %HOME%/site/wwwroot/gopath/bin
-MKDIR %HOME%/site/wwwroot/gopath/src
+set NEWHOME=%HOME%
+set NEWHOME=%NEWHOME:/=\%
+
+MKDIR %NEWHOME%\site\wwwroot\gopath
+MKDIR %NEWHOME%\site\wwwroot\gopath\bin
+MKDIR %NEWHOME%\site\wwwroot\gopath\src
 
 rem set hr=%time:~0,2%
 rem if "%hr:~0,1%" equ " " set hr=0%hr:~1,1%
