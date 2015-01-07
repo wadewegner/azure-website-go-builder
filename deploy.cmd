@@ -1,4 +1,4 @@
-@echo off
+@echo on
 
 echo Creating folders
 MKDIR %HOME%\site\wwwroot\gopath
