@@ -13,10 +13,10 @@ SET FOLDER=%date:~-4,4%%date:~-10,2%%date:~-7,2%_%hr%%time:~3,2%%time:~6,2%
 
 ECHO %FOLDER%
 
-rem MKDIR %NEWHOME%\site\wwwroot\gopath\src\%FOLDER%
+MKDIR %NEWHOME%\site\wwwroot\gopath\src\%FOLDER%
 
-rem xcopy %DEPLOYMENT_SOURCE%\site\repository %NEWHOME%\site\wwwroot\gopath\src\%FOLDER% /Y
-rem xcopy /r %DEPLOYMENT_SOURCE%\site\repository\Web.Config %NEWHOME%\site\wwwroot\Web.Config* /Y
+xcopy %DEPLOYMENT_SOURCE%\site\repository %NEWHOME%\site\wwwroot\gopath\src\%FOLDER% /Y
+xcopy /r %DEPLOYMENT_SOURCE%\site\repository\Web.Config %NEWHOME%\site\wwwroot\Web.Config* /Y
 
 rem SET GOPATH=%NEWHOME%\site\wwwroot\gopath
 rem SET GOROOT=%NEWHOME%\site\wwwroot\go
