@@ -1,5 +1,3 @@
-set echo on
-
 set NEWHOME=%HOME%
 set NEWHOME=%NEWHOME:/=\%
 
@@ -27,5 +25,3 @@ ECHO %PATH%
 go get %FOLDER%
 
 sed -i 's/GOAPPBINARY/%FOLDER%.exe/g' %NEWHOME%\site\wwwroot\Web.Config
-
-rem exit /b 1
