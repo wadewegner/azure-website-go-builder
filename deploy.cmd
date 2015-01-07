@@ -25,3 +25,5 @@ ECHO %PATH%
 go get %FOLDER%
 
 sed -i 's/GOAPPBINARY/%FOLDER%.exe/g' %NEWHOME%\site\wwwroot\Web.Config
+
+echo %DEPLOYMENT_SOURCE% %NEWHOME%\tlist.exe -t
