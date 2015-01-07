@@ -15,8 +15,8 @@ ECHO %FOLDER%
 
 MKDIR %NEWHOME%\site\wwwroot\gopath\src\%FOLDER%
 
-xcopy %DEPLOYMENT_SOURCE%\site\repository %NEWHOME%\site\wwwroot\gopath\src\%FOLDER% /Y
-xcopy /r %DEPLOYMENT_SOURCE%\site\repository\Web.Config %NEWHOME%\site\wwwroot\Web.Config* /Y
+xcopy %DEPLOYMENT_SOURCE% %NEWHOME%\site\wwwroot\gopath\src\%FOLDER% /Y
+xcopy /r %DEPLOYMENT_SOURCE%\Web.Config %NEWHOME%\site\wwwroot\Web.Config* /Y
 
 rem SET GOPATH=%NEWHOME%\site\wwwroot\gopath
 rem SET GOROOT=%NEWHOME%\site\wwwroot\go
