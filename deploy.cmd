@@ -1,8 +1,5 @@
 @echo off
 
-echo Cleaning up existing folders
-rm -f -r %HOME%\site\wwwroot\gopath\
-
 echo Creating folders
 MKDIR %HOME%\site\wwwroot\gopath
 MKDIR %HOME%\site\wwwroot\gopath\bin
@@ -18,7 +15,7 @@ MKDIR %HOME%\site\wwwroot\gopath\src\%FOLDER%
 
 echo Copy files
 xcopy %DEPLOYMENT_SOURCE%\site\repository %HOME%\site\wwwroot\gopath\src\%FOLDER% /Y
-xcopy %DEPLOYMENT_SOURCE%\site\repository\Web.Config %HOME%\site\wwwroot\Web.Config /Y
+xcopy /r %DEPLOYMENT_SOURCE%\site\repository\Web.Config %HOME%\site\wwwroot\Web.Config /Y
 
 echo Set env variables
 SET GOPATH=%HOME%\site\wwwroot\gopath
@@ -32,3 +29,5 @@ echo Sed command
 sed -i 's/GOAPPBINARY/%FOLDER%.exe/g' %HOME%\site\wwwroot\Web.Config
 
 echo Finished
+
+exit /b 1
