@@ -18,9 +18,11 @@ MKDIR %NEWHOME%\site\wwwroot\gopath\src\%FOLDER%
 xcopy %DEPLOYMENT_SOURCE% %NEWHOME%\site\wwwroot\gopath\src\%FOLDER% /Y
 xcopy /r %DEPLOYMENT_SOURCE%\Web.Config %NEWHOME%\site\wwwroot\Web.Config* /Y
 
-rem SET GOPATH=%NEWHOME%\site\wwwroot\gopath
-rem SET GOROOT=%NEWHOME%\site\wwwroot\go
-rem SET PATH=%PATH%;%GOPATH%\bin;%NEWHOME%\site\wwwroot\go\bin
+SET GOPATH=%NEWHOME%\site\wwwroot\gopath
+SET GOROOT=%NEWHOME%\site\wwwroot\go
+SET PATH=%PATH%;%GOPATH%\bin;%NEWHOME%\site\wwwroot\go\bin
+
+ECHO %PATH%
 
 rem go get %FOLDER%
 
