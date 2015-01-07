@@ -7,21 +7,23 @@ MKDIR %NEWHOME%\site\wwwroot\gopath
 MKDIR %NEWHOME%\site\wwwroot\gopath\bin
 MKDIR %NEWHOME%\site\wwwroot\gopath\src
 
-rem set hr=%time:~0,2%
-rem if "%hr:~0,1%" equ " " set hr=0%hr:~1,1%
-rem SET FOLDER=%date:~-4,4%%date:~-10,2%%date:~-7,2%_%hr%%time:~3,2%%time:~6,2%
+set hr=%time:~0,2%
+if "%hr:~0,1%" equ " " set hr=0%hr:~1,1%
+SET FOLDER=%date:~-4,4%%date:~-10,2%%date:~-7,2%_%hr%%time:~3,2%%time:~6,2%
 
-rem MKDIR %HOME%\site\wwwroot\gopath\src\%FOLDER%
+ECHO FOLDER
 
-rem xcopy %DEPLOYMENT_SOURCE%\site\repository %HOME%\site\wwwroot\gopath\src\%FOLDER% /Y
-rem xcopy /r %DEPLOYMENT_SOURCE%\site\repository\Web.Config %HOME%\site\wwwroot\Web.Config* /Y
+rem MKDIR %NEWHOME%\site\wwwroot\gopath\src\%FOLDER%
 
-rem SET GOPATH=%HOME%\site\wwwroot\gopath
-rem SET GOROOT=%HOME%\site\wwwroot\go
-rem SET PATH=%PATH%;%GOPATH%\bin;%HOME%\site\wwwroot\go\bin
+rem xcopy %DEPLOYMENT_SOURCE%\site\repository %NEWHOME%\site\wwwroot\gopath\src\%FOLDER% /Y
+rem xcopy /r %DEPLOYMENT_SOURCE%\site\repository\Web.Config %NEWHOME%\site\wwwroot\Web.Config* /Y
+
+rem SET GOPATH=%NEWHOME%\site\wwwroot\gopath
+rem SET GOROOT=%NEWHOME%\site\wwwroot\go
+rem SET PATH=%PATH%;%GOPATH%\bin;%NEWHOME%\site\wwwroot\go\bin
 
 rem go get %FOLDER%
 
-rem sed -i 's/GOAPPBINARY/%FOLDER%.exe/g' %HOME%\site\wwwroot\Web.Config
+rem sed -i 's/GOAPPBINARY/%FOLDER%.exe/g' %NEWHOME%\site\wwwroot\Web.Config
 
 rem exit /b 1
