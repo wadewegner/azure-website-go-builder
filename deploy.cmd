@@ -18,6 +18,7 @@ MKDIR %HOME%\site\wwwroot\gopath\src\%FOLDER%
 
 echo Copy files
 xcopy %DEPLOYMENT_SOURCE%\site\repository %HOME%\site\wwwroot\gopath\src\%FOLDER% /Y
+xcopy %DEPLOYMENT_SOURCE%\site\repository\Web.Config %HOME%\site\wwwroot\Web.Config /Y
 
 echo Set env variables
 SET GOPATH=%HOME%\site\wwwroot\gopath
