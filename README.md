@@ -7,5 +7,3 @@ For this to work it's assumed you've installed the Go SDK. Just run the followin
 	curl -O https://storage.googleapis.com/golang/go1.4.windows-386.zip
 
 	unzip go1.4.windows-386.zip
-
-Or you can use the [Go Lang for Azure Websites Extension](https://www.siteextensions.net/packages/golang/) described in my post [Creating a Go Site Extension and Resource Template for Azure](http://www.wadewegner.com/2015/01/creating-a-go-site-extension-and-resource-template-for-azure/).
