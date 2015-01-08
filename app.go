@@ -41,5 +41,5 @@ func route3Handler(w http.ResponseWriter, r *http.Request) {
 }
  
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-  w.Write([]byte("HomeHandler updated 4"))
+  w.Write([]byte("HomeHandler updated for my wife"))
 }
