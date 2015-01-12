@@ -4,6 +4,8 @@ Yes, [Azure Websites](http://azure.microsoft.com/en-us/services/websites/) can r
 
 In this repository you'll find the tools you need to configure Azure Websites to automatically compile and host your Go website when you commit using Git. Simply follow the steps in this tutorial to get everything setup and configured.
 
+**Note:** you'll only have to run through this tutorial once. Once configured, all you need to do is commit your Go code and the app is automatically compiled and configured.
+
 **Setup Steps**
 
 1. Clone this repository. `git clone https://github.com/wadewegner/azure-website-go-builder`
@@ -52,6 +54,6 @@ In this repository you'll find the tools you need to configure Azure Websites to
 
 	![website](https://cloud.githubusercontent.com/assets/746259/5703410/7aa481e8-9a23-11e4-9212-9e329ecf35b0.png)
 
-That's it! As part of the commit process, Azure Websites runs the `deploy.cmd` file to compile and deploy your application. If you change your app.go and push your changes you'll see the updates after the deploy script finishes.
+That's it! As part of the commit process, Azure Websites runs the `deploy.cmd` file to compile and deploy your application. If you change your `app.go` and push your changes you'll see the updates after the deploy script finishes.
 
 If you have any questions or issues please submit an issue.
