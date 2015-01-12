@@ -1,45 +1,22 @@
 package main
- 
 import (
-  "os"
-  "github.com/gorilla/mux"
-  "net/http"
+    "io"
+    "net/http"
+    "os" 
 )
- 
+func handler(w http.ResponseWriter, r *http.Request) {
+    w.Header().Set("Content-type", "text/html")
+    io.WriteString(w, `
+        Congratulations! You're running Go in Azure Websites. Furthermore, you did so via a commit into Azure Websites!
+        <p>
+        Next steps? See <a href=""http://www.wadewegner.com""> http://www.wadewegner.com</a> for more details!`)
+}
 func main() {
+    port := os.Getenv("HTTP_PLATFORM_PORT")
+    if port == "" {
+      port = "3000"
+    }
 
-  port := os.Getenv("HTTP_PLATFORM_PORT")
-  if port == "" {
-    port = "3000"
-  }
-
-  r := mux.NewRouter()
-
-  r.HandleFunc("/route1", route1Handler)
-  r.HandleFunc("/route2/{param}", route2Handler)
-  r.HandleFunc("/route3/{param}/{id:[0-9]+}", route3Handler)
-  r.HandleFunc("/", homeHandler)
-
-  http.Handle("/", r)
-  http.ListenAndServe(":" + port, nil)
-}
- 
-func route1Handler(w http.ResponseWriter, r *http.Request) {
-    w.Write([]byte("Route1Handler"))
-}
- 
-func route2Handler(w http.ResponseWriter, r *http.Request) {
-  param :=  mux.Vars(r)["param"]
-  w.Write([]byte("Route2Handler " + param))
-}
- 
-func route3Handler(w http.ResponseWriter, r *http.Request) {
-  param :=  mux.Vars(r)["param"]
-  id :=  mux.Vars(r)["id"]
-
-  w.Write([]byte("Route3Handler " + param + " " + id))
-}
- 
-func homeHandler(w http.ResponseWriter, r *http.Request) {
-  w.Write([]byte("HomeHandler updated for my wife"))
+    http.HandleFunc("/", handler)
+    http.ListenAndServe(":" + port, nil)
 }
