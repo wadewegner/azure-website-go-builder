@@ -1,13 +1,13 @@
 Switch-AzureMode -Name AzureResourceManager
 
-$subName = "Microsoft FTE"
-$userName = "wade@wadewegnergmail.onmicrosoft.com"
-$securePassword = ConvertTo-SecureString -String "j)MwY9j3E{o" -AsPlainText -Force
-$name = "GoLangTest2"
+$subName = "YOURSUBSCRIPTIONNAME"
+$userName = "YOURAZUREADADMIN"
+$securePassword = ConvertTo-SecureString -String "YOURPASSWORD" -AsPlainText -Force
+$name = "GoLang"
 $location = "West US"
-$templateFile = "Template.json"
 $siteName = $name + "Site"
 $hostingPlanName = $name
+$templateFile = "Template.json"
 
 $cred = New-Object System.Management.Automation.PSCredential($userName, $securePassword)
 Add-AzureAccount -Credential $cred 
