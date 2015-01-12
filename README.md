@@ -25,10 +25,10 @@ In this repository you'll find the tools you need to configure Azure Websites to
 
 		![portaltest](https://cloud.githubusercontent.com/assets/746259/5703027/1b6da8b2-9a1e-11e4-8489-4ce689bf963f.png)
 
-	3. Once your website is provisioned the website blade will open. Select `Configuration` -> `Extensions` then click the `Add` button.
+	3. Once your website is provisioned the website blade will open. Select `Configuration` and `Extensions` then click the `Add` button.
 	4. Select the `Go Lang for Azure Websites` site extension, accept the legal terms, and click `OK`.
 	
-	It will take a few minutes to install into site extension. You can see progress on the `Notifications` blad.
+	Give it a moment to install into site extension. You can see progress on the `Notifications` blade.
 
 3. Log into the [Azure Portal](https://portal.azure.com/) (if you're not already there) and open your website blade.
 
@@ -38,7 +38,7 @@ In this repository you'll find the tools you need to configure Azure Websites to
 
 6. Select the `Deployment` tile again (it should saw `No deployments found`) and copy your `GIT URL`.
 
-7. Return to your console and add a git remote to the `azure-website-go-builder` to your Azure website.
+7. Return to your console and add a git remote to your Azure Website.
 
 		git remote add azure https://wadewegner@golangtestportalsite.scm.azurewebsites.net:443/GoLangTestPortalSite.git
 
@@ -52,7 +52,6 @@ In this repository you'll find the tools you need to configure Azure Websites to
 
 	![website](https://cloud.githubusercontent.com/assets/746259/5703410/7aa481e8-9a23-11e4-9212-9e329ecf35b0.png)
 
-
-That's it! As part of the commit process, Azure Websites runs the `deploy.cmd` file to compile and deploy your application.
+That's it! As part of the commit process, Azure Websites runs the `deploy.cmd` file to compile and deploy your application. If you change your app.go and push your changes you'll see the updates after the deploy script finishes.
 
 If you have any questions or issues please submit an issue.
