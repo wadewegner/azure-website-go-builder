@@ -3,7 +3,7 @@ Switch-AzureMode -Name AzureResourceManager
 $subName = "YOURSUBSCRIPTIONNAME"
 $userName = "YOURAZUREADADMIN"
 $securePassword = ConvertTo-SecureString -String "YOURPASSWORD" -AsPlainText -Force
-$name = "GoLangTestPowerShell"
+$name = "GoLang"
 $location = "West US"
 $siteName = $name + "Site"
 $hostingPlanName = $name
